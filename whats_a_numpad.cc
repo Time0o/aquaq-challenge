@@ -20,17 +20,17 @@ int main()
     std::stringstream ss;
 
     while (getline(std::cin, line)) {
-        if (std::cin.bad()) {
-            std::cerr << "failed to read input\n";
-            exit(EXIT_FAILURE);
-        }
-
         if (!regex_match(line.c_str(), cm, reg)) {
             std::cerr << "failed to parse '" << line << "'\n";
             exit(EXIT_FAILURE);
         }
 
         ss << keys[std::stoi(cm[1])][std::stoi(cm[2]) - 1];
+    }
+
+    if (std::cin.bad()) {
+        std::cerr << "failed to read input\n";
+        exit(EXIT_FAILURE);
     }
 
     std::cout << ss.str() << '\n';
