@@ -2,8 +2,10 @@
 #define UTIL_H
 
 #include <algorithm>
+#include <cassert>
 #include <iostream>
 #include <map>
+#include <set>
 #include <sstream>
 #include <string>
 #include <vector>
