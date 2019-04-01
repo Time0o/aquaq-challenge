@@ -69,6 +69,8 @@ std::vector<std::vector<std::string>> read_csv(
         }
     }
 
+    assert(!is.bad());
+
     return csv;
 }
 
