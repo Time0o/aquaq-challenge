@@ -63,6 +63,10 @@ fi
 print_header "testing C++ solutions"
 
 for prog_path in $CPP_DIR/bin/*; do
+    if [[ "$prog_path" == *.d ]]; then
+        continue
+    fi
+
     prog="$(basename $prog_path)"
     print_info "$prog"
 
