@@ -108,6 +108,11 @@ int main()
         }
     }
 
+    if (!first) {
+        std::cerr << "missing input\n";
+        exit(EXIT_FAILURE);
+    }
+
     if (std::cin.bad()) {
         std::cerr << "failed to read input\n";
         exit(EXIT_FAILURE);
