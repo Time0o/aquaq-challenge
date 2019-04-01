@@ -11,6 +11,27 @@
 #include <vector>
 
 
+int stoi_assert(std::string const &str)
+{
+    int res;
+
+    bool is_number = true;
+    try {
+        std::size_t idx;
+        res = std::stoi(str, &idx);
+
+        if (idx != str.length())
+            is_number = false;
+    } catch (std::invalid_argument const &e) {
+        is_number = false;
+    }
+
+    assert(is_number);
+
+    return res;
+}
+
+
 std::vector<std::string> split(std::string const &str, char delim=',')
 {
     std::vector<std::string> res;

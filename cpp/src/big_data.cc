@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 
+#include "util.h"
+
 
 enum { BIG_BASE = static_cast<uint32_t>(1e9) };
 
@@ -46,23 +48,8 @@ int main()
     std::vector<int> nums;
 
     std::string line;
-    while (getline(std::cin, line)) {
-        bool is_number = true;
-        try {
-            std::size_t idx;
-            nums.push_back(std::stoi(line, &idx));
-
-            if (idx != line.length())
-                is_number = false;
-        } catch (std::invalid_argument const &e) {
-            is_number = false;
-        }
-
-        if (!is_number) {
-            std::cerr << "not a number: '" << line << "'\n";
-            exit(EXIT_FAILURE);
-        }
-    }
+    while (getline(std::cin, line))
+        nums.push_back(stoi_assert(line));
 
     if (std::cin.bad()) {
         std::cerr << "failed to read input\n";
