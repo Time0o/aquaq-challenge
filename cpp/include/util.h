@@ -66,7 +66,7 @@ std::vector<std::vector<std::string>> read_csv(
             // validate column names and determine column order
             std::set<std::string> columns_actual;
 
-            for (auto i = 0u; i < 3u; ++i) {
+            for (auto i = 0u; i < columns.size(); ++i) {
                 columns_actual.insert(tokens[i]);
 
                 auto column_index = std::find(
