@@ -8,7 +8,7 @@
 int main()
 {
     std::string input;
-    if (!getline(std::cin, input) && std::cin.bad()) {
+    if (!std::getline(std::cin, input) && std::cin.bad()) {
         std::cerr << "failed to read input\n";
         exit(EXIT_FAILURE);
     }

@@ -19,7 +19,7 @@ int main()
     std::string line;
     std::stringstream ss;
 
-    while (getline(std::cin, line)) {
+    while (std::getline(std::cin, line)) {
         if (!regex_match(line.c_str(), cm, reg)) {
             std::cerr << "failed to parse '" << line << "'\n";
             exit(EXIT_FAILURE);
