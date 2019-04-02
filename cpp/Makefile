@@ -3,7 +3,7 @@ BIN=bin
 INCLUDE=include
 
 CC=g++
-CXXFLAGS=-Wall -Wextra -std=c++11 -pedantic -I$(INCLUDE) -MMD -MP
+CXXFLAGS=-Wall -Wextra -std=c++17 -pedantic -I$(INCLUDE) -MMD -MP
 
 src=$(wildcard $(SRC)/*.cc)
 bin=$(patsubst $(SRC)/%.cc, $(BIN)/%, $(src))
@@ -13,7 +13,7 @@ all: $(bin)
 
 # build rules
 $(BIN)/%: $(SRC)/%.cc
-	$(CC) $(CXXFLAGS) -o $@ $<
+	$(CC) $(CXXFLAGS) -o $@ $< -lstdc++fs
 
 -include $(patsubst $(SRC)/%.cc, $(BIN)/%.d, $(src))
 
