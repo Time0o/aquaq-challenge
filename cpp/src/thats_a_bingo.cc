@@ -6,7 +6,7 @@
 #include <utility>
 #include <vector>
 
-#include "util.h"
+#include "stoi.h"
 
 
 static int const board[][5] = {
