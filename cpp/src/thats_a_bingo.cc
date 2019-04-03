@@ -79,9 +79,7 @@ static int turns_until_bingo(std::vector<int> numbers)
         first_call = false;
     }
 
-    std::vector<std::vector<int>> game;
-    for (auto y = 0u; y < board_dim; ++y)
-        game.push_back(std::vector<int>(board_dim));
+    std::vector<std::vector<int>> game(board_dim, std::vector<int>(board_dim));
 
     int turns = 0u;
     for (int n : numbers) {
